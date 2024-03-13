@@ -25,7 +25,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -44,37 +47,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB5wSpFAL1_e5KJ9lFR36klbIcfxLjMgKs',
-    appId: '1:727830725517:web:648061c770e32aa39b33c4',
-    messagingSenderId: '727830725517',
-    projectId: 'todolist-10ef1',
-    authDomain: 'todolist-10ef1.firebaseapp.com',
-    storageBucket: 'todolist-10ef1.appspot.com',
+    apiKey: 'AIzaSyA5qMJp2uaPTsh7Xd_cNjibCEiO1kX-ano',
+    appId: '1:630465664342:web:625a70c8e521fb56e032f7',
+    messagingSenderId: '630465664342',
+    projectId: 'todo-app-mini-project',
+    authDomain: 'todo-app-mini-project.firebaseapp.com',
+    storageBucket: 'todo-app-mini-project.appspot.com',
+    measurementId: 'G-QRY6N95J66',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCRm_zOokLV-Nb_5zpJnjAuJlD93gA5e3o',
-    appId: '1:727830725517:android:e1aba9d6fc5baaad9b33c4',
-    messagingSenderId: '727830725517',
-    projectId: 'todolist-10ef1',
-    storageBucket: 'todolist-10ef1.appspot.com',
+    apiKey: 'AIzaSyAxkvePSaKkym9Z4MebSYaHxv7fctbJv68',
+    appId: '1:630465664342:android:b4f4d41729e49942e032f7',
+    messagingSenderId: '630465664342',
+    projectId: 'todo-app-mini-project',
+    storageBucket: 'todo-app-mini-project.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD9iVn-6Ph5fLkQ2_5e3trgE67Spmri9jY',
-    appId: '1:727830725517:ios:161a0940e6b089849b33c4',
-    messagingSenderId: '727830725517',
-    projectId: 'todolist-10ef1',
-    storageBucket: 'todolist-10ef1.appspot.com',
+    apiKey: 'AIzaSyDz1geRH8Wz1il7dlaQIKfnc3UsfqRkDFU',
+    appId: '1:630465664342:ios:137ef35e541afbaee032f7',
+    messagingSenderId: '630465664342',
+    projectId: 'todo-app-mini-project',
+    storageBucket: 'todo-app-mini-project.appspot.com',
     iosBundleId: 'com.example.flutterToDoList',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD9iVn-6Ph5fLkQ2_5e3trgE67Spmri9jY',
-    appId: '1:727830725517:ios:6f0305078332755a9b33c4',
-    messagingSenderId: '727830725517',
-    projectId: 'todolist-10ef1',
-    storageBucket: 'todolist-10ef1.appspot.com',
-    iosBundleId: 'com.example.flutterToDoList.RunnerTests',
   );
 }
