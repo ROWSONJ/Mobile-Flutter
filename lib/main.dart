@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:todo/services/theme_services.dart';
 import 'package:todo/ui/pages/home_page.dart';
-import 'package:todo/ui/pages/login_page.dart';
+import 'package:todo/ui/pages/login/login_page.dart';
 import 'package:todo/ui/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
