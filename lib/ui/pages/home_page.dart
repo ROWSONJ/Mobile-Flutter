@@ -18,12 +18,12 @@ import '../../models/task.dart';
 import '../../services/notification_services.dart';
 import '../size_config.dart';
 import '../theme.dart';
+import 'profile_page.dart';
 
 class HomePage extends StatefulWidget {
   final User? firebaseUser;
-  final AppUser? appUser;
 
-  const HomePage({Key? key, this.firebaseUser, this.appUser}) : super(key: key);
+  const HomePage({Key? key, this.firebaseUser }) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -91,13 +91,16 @@ class _HomePageState extends State<HomePage> {
           },
         ),
         GestureDetector(
-          onTap: () async {
-            final User? firebaseUser = FirebaseAuth.instance.currentUser;
-            if (firebaseUser != null) {
-              final DocumentSnapshot userDoc = await FirebaseFirestore.instance.collection('users').doc(firebaseUser.uid).get();
-              final AppUser appUser = AppUser.fromMap(userDoc.data() as Map<String, dynamic>);
-              await Get.to(() => ProfileEditPage(appUser: appUser, firebaseUser: firebaseUser));
-            }
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (c) => ProfilePage(
+                  firebaseUser: widget.firebaseUser,
+                  // appUser: widget.appUser,
+                ),
+              ),
+            );
           },
           child: CircleAvatar(
             backgroundImage: AssetImage('images/person.jpeg'),
@@ -396,3 +399,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+

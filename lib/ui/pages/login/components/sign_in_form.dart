@@ -68,11 +68,14 @@ class _SignInFormState extends State<SignInForm> {
         email: emailController.text,
         password: passwordController.text,
       );
-      // Navigate to home page upon successful login
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => HomePage(firebaseUser: userCredential.user)),
-      );
+      if (userCredential.user != null) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => HomePage(firebaseUser: userCredential.user)),
+        );
+      } else {
+        // Handle the case where userCredential.user is null
+      }
     } catch (e) {
       print("Error: $e");
       // Handle login errors (e.g., display error message)
