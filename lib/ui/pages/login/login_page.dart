@@ -67,7 +67,7 @@ class _LoginPage extends State<LoginPage> {
                               height: 16,
                             ),
                             Text(
-                                "Take control of your day with [App Name]'s simple and powerful organization tools.")
+                                "Take control of your day with TODO's simple and powerful organization tools.")
                           ]),
                         ),
                         const Spacer(
